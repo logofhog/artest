@@ -1,0 +1,13 @@
+<%= render 'authors/header' %>
+<div> authors page! </div>
+<% @authors.each do |a| %>
+  <ol>
+    <li><%= a.name %> <%= link_to 'New Book', new_author_book_path(a) %></li>
+    <li><% a.books.each do |b| %>
+      <%= b.title %>
+    <% end %>
+    </li>
+  </ol>
+<% end %>
+<%= @sql %>
+
