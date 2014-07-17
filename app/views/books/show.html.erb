@@ -1,15 +1,18 @@
 <div>this is the book
   <%= link_to @book.title, @book %>
   <% if @book.chapters.any? %>
+    this book has the following chapters
+    <li><%= @book.chapters.to_sql %></li>
     <div>
       <ul>
         <% @book.chapters.each do |chapter| %>
           <li><%= link_to chapter.name, chapter %></li>
-          <li><%= chapter.paragraphs.to_sql %></li>
         <% end %>
       </ul>
   <% end %>
+  <%= link_to 'New Chapter', new_book_chapter_path(@book) %>
   
+  </br>
   <% if @book.paragraphs.any? %>
     this book has the following paragraphs as well
       <ul>
@@ -21,6 +24,4 @@
   <% end %>
 
 
-  </br>
-  <%= link_to 'New Chapter', new_book_chapter_path(@book) %>
 </div>
