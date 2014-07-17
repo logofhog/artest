@@ -6,7 +6,13 @@ end
 
 resources :books, shallow:true do
   resources :chapters
+  resources :pictures
 end
+
+resources :magazines do 
+  resources :pictures
+end
+
 
 resources :chapters, shallow:true do
   resources :paragraphs

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716231303) do
+ActiveRecord::Schema.define(version: 20140717040403) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -40,9 +40,23 @@ ActiveRecord::Schema.define(version: 20140716231303) do
     t.datetime "updated_at"
   end
 
+  create_table "magazines", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "paragraphs", force: true do |t|
     t.string   "number"
     t.integer  "chapter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pictures", force: true do |t|
+    t.string   "name"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

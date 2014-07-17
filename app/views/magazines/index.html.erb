@@ -1,0 +1,5 @@
+<div>Magazines!</div>
+<% @magazines.each do |magazine| %>
+  <li><%= link_to magazine.name, magazine %></li>
+<% end %>
+<%= link_to 'New Magazine', new_magazine_path %>

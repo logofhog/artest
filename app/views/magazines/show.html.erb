@@ -1,0 +1,8 @@
+<div>the magazine 
+  <%= @magazine.name %>
+</div>
+has the pictures
+<% @magazine.pictures.each do |picture| %>
+  <li> <%= picture.name %></li>
+<% end %>
+<%= link_to 'New picture', new_magazine_picture_path(@magazine) %>

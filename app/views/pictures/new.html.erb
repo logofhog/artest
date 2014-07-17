@@ -1,0 +1,10 @@
+<div>new picture</div>
+<%= form_for([@context, @picture],
+             :url => polymorphic_path([@context, @picture])) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Save Picture' %>
+<% end %>
+
+
+
