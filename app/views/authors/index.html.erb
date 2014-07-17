@@ -4,7 +4,7 @@
   <ol>
     <li><%= a.name %> <%= link_to 'New Book', new_author_book_path(a) %></li>
     <li><% a.books.each do |b| %>
-      <%= b.title %>
+    <%= link_to b.title, author_book_path(a, b)%>
     <% end %>
     </li>
   </ol>

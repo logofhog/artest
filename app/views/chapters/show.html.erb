@@ -1,0 +1,15 @@
+<div>
+  paragraphs in chapter
+  <%= link_to @chapter.name, @chapter %>
+  <% if @chapter.paragraphs.any? %>
+    <div>
+      <ul>
+        <% @chapter.paragraphs.each do |paragraph| %>
+          <li><%= link_to paragraph.number, paragraph %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  
+  </br>
+  <%= link_to 'New Paragraph', new_chapter_paragraph_path(@chapter) %>
+</div>

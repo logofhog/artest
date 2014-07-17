@@ -4,6 +4,14 @@ resources :authors do
   resources :books
 end
 
+resources :books, shallow:true do
+  resources :chapters
+end
+
+resources :chapters, shallow:true do
+  resources :paragraphs
+end
+
 root :to => "mainpage#home"
 
   # The priority is based upon order of creation: first created -> highest priority.

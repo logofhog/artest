@@ -1,0 +1,7 @@
+<div>
+  <%= form_for([@chapter, @paragraph], :url => chapter_paragraphs_path) do |f| %>
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+    <%= f.submit 'Save paragraph' %>
+  <% end %>
+</div>

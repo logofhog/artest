@@ -3,6 +3,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def new
@@ -10,9 +11,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    puts params[:author_id]
     @author = Author.find(params[:author_id])
-    puts @author.inspect
     @book = @author.books.new(book_params)
     if @book.save
       redirect_to :controller => 'authors', :action => 'index'
